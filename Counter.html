@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter By Sami</title>
+    <style>
+        /* Reset and global styling */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            color: #333;
+        }
+
+        .main {
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+        }
+
+        h1.count {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            border: none;
+            color: #fff;
+            background-color: #00bcd4;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        .plus {
+            background-color: #4caf50;
+        }
+
+        .minus {
+            background-color: #f44336;
+        }
+
+        .restart {
+            background-color: #ff9800;
+            width: auto;
+            border-radius: 20px;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .dis {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .change {
+            width: 50px;
+            padding: 5px;
+            margin-left: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            outline: none;
+        }
+        .par{
+            font-weight: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <h1 class="count">0</h1>
+        <button class="plus">+</button>
+        <button class="minus">-</button>
+        <div class="dis">
+            Increment/Decrement by: 
+            <input type="text" value="1" class="change">
+        </div>
+        <button class="restart">Restart</button>
+        <br>
+        <p class="par">Muhammad Sami <span id="update">2024</span>
+            | All rights reserved.</p>
+    </div>
+
+    <script>
+        const count = document.querySelector('.count');
+        const plus = document.querySelector('.plus');
+        const minus = document.querySelector('.minus');
+        const change = document.querySelector('.change');
+        const restart = document.querySelector('.restart');
+
+        plus.addEventListener('click', () => {
+            let countValue = parseInt(count.innerText);
+            let changeValue = parseInt(change.value) || 0; 
+            count.innerText = countValue + changeValue;
+            count.style.color = '#4caf50';
+        });
+
+        minus.addEventListener('click', () => {
+            let countValue = parseInt(count.innerText);
+            let changeValue = parseInt(change.value) || 0; 
+            count.innerText = countValue - changeValue;
+            count.style.color = '#f44336';
+        });
+
+        restart.addEventListener('click', () => {
+            count.innerText = 0;
+            count.style.color = '#333';
+        });
+    </script>
+    
+</body>
+</html>

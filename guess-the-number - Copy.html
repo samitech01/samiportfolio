@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+    }
+
+    h1 {
+        color: #333;
+    }
+    h4 {
+        color: #333;
+    }
+
+    .form {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .num {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 150px;
+        outline: none;
+    }
+
+    .submit, .reset {
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .submit {
+        background-color: #4CAF50;
+    }
+
+    .submit:hover {
+        background-color: #45a049;
+    }
+
+    .reset {
+        background-color: #f44336; 
+    }
+
+    .reset:hover {
+        background-color: #e53935;
+    }
+
+    .message, .attempts, .history {
+        margin-top: 15px;
+        font-size: 1.1rem;
+        color: #555;
+    }
+
+    .message {
+        font-weight: bold;
+        color: #333;
+    }
+</style>
+<body>
+    <h1>Guess the Number Game</h1>
+    <h4>Guess a number between 1 and 100!</h4>
+    
+    <form class="form">
+        <input type="number" class="num" placeholder="Enter your guess" min="1" max="100" required>
+        <button type="submit" class="submit">Submit</button>
+        <button type="button" class="reset">Reset</button>
+    </form>
+
+    <p class="message"></p>
+    <p class="attempts"><b>Attempts: 0</b></p>
+    <p class="history"><b>History: </b></p>
+    <br><br><br><br><br><br><br>
+    
+    <footer>
+        <h4>
+            Copyright © 2024 by Muhammad Sami | All Right Reserved.</h4>
+    </footer>
+
+    <script>
+        const submitButton = document.querySelector('.submit');
+        const resetButton = document.querySelector('.reset');
+        const numInput = document.querySelector('.num');
+        const form = document.querySelector('.form');
+        const message = document.querySelector('.message');
+        const attemptsDisplay = document.querySelector('.attempts');
+        const historyDisplay = document.querySelector('.history');
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        let guessHistory = [];
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+
+            const userGuess = Number(numInput.value);
+            attempts++;
+            guessHistory.push(userGuess);
+            attemptsDisplay.textContent = `Attempts: ${attempts}`;
+            historyDisplay.textContent = `History: ${guessHistory.join(', ')}`;
+
+            if (userGuess === randomNumber) {
+                message.textContent = 'Congratulations! You guessed the correct number!';
+            } else if (userGuess > randomNumber) {
+                message.textContent = 'Too high! Try again.';
+            } else {
+                message.textContent = 'Too low! Try again.';
+            }
+
+            numInput.value = ''; 
+        });
+
+        resetButton.addEventListener('click', () => {
+            randomNumber = Math.floor(Math.random() * 100) + 1; 
+            attempts = 0; 
+            guessHistory = [];
+            attemptsDisplay.textContent = `Attempts: ${attempts}`;
+            historyDisplay.textContent = 'History: '; 
+            message.textContent = 'Game reset! Guess a new number.';
+            numInput.value = ''; 
+        });
+    </script>
+</body>
+</html>

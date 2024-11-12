@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - by Muhammad Sami</title>
+    <link rel="icon" type="image/x-icon" href="/Images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        font-family: 'Poppins', sans-serif;
+        color: #333;
+    }
+
+    .weatherContainer {
+        padding: 2rem;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .appHeading {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #0078d7;
+    }
+
+    #weatherForm {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #weatherForm input {
+        flex: 1;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        outline: none;
+        font-size: 1rem;
+    }
+
+    .searchBtn {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: #0078d7;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .searchBtn:hover {
+        background: #005bb5;
+    }
+
+    .weatherContainer img {
+        width: 50%;
+        margin: 1rem 0;
+        transition: transform 0.3s ease;
+    }
+
+    #temp {
+        font-size: 2.5rem;
+        margin: 0.5rem 0;
+        color: #333;
+    }
+
+    #temp sup {
+        font-size: 1rem;
+        vertical-align: top;
+    }
+
+    .todayDates,
+    #todayTime {
+        font-size: 1rem;
+        color: #555;
+        margin-top: 0.5rem;
+    }
+
+    /* Utility Classes */
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-space-around {
+        justify-content: space-around;
+    }
+
+    .justify-space-center {
+        justify-content: center;
+    }
+
+    .align-items-center {
+        align-items: center;
+    }
+
+    .f-col {
+        flex-direction: column;
+    }
+
+    @media (max-width: 400px) {
+        #weatherForm {
+            flex-direction: column;
+        }
+    }
+</style>
+<body>
+    <div class="weatherContainer">
+        <h2 class="appHeading">Weather App</h2>
+        <div class="search">
+            <form action="" id="weatherForm">
+                <input type="text" id="weatherInput" placeholder="Enter your city here...">
+                <button class="searchBtn" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <h2 id="city"></h2>
+        <img src="" alt="" id="weatherImage">
+        <p class="weatherMain" id="weatherMain"></p>
+        <h2 id="temp"><span class="temp"></span></h2>
+        <div class="todayDates"></div>
+        <div id="todayTime"></div>
+    </div>
+    <div style="margin-top: 1rem; text-align: center;">
+        <p>&copy; 2024 by Muhammad Sami | All Rights Reserved.</p>
+    </div>
+
+    <script>
+        const cityName = document.querySelector('#weatherInput');
+        const form = document.getElementById('weatherForm');
+        const myCity = document.getElementById('city');
+        const image = document.getElementById('weatherImage');
+        const weather = document.getElementById('weatherMain');
+        const temp = document.querySelector('.temp');
+        const dates = document.querySelector('.todayDates');
+        const times = document.getElementById('todayTime');
+        let date = new Date();
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let city = cityName.value;
+            const myWeatherContainer = document.querySelector('.weatherContainer');
+            const apiID = `931f131dde3f4ae2fcbc3289fc646471`;
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiID}`
+
+            fetch(url).then((response) => {
+                return response.json();
+            }).then((data) => {
+                const tempValue = Math.round(data['main']['temp']);
+                const weatherMain = data['weather'][0]['main'];
+                weather.innerHTML = weatherMain;
+                myCity.innerHTML = city;
+                temp.innerHTML = `${tempValue}<sup>°C</sup>`;
+
+                if (weatherMain == 'Clear') {
+                    image.src = `./Images/sunny.png`;
+                    myWeatherContainer.style.backgroundColor = '#fbcf61';
+                } else if (weatherMain == 'Clouds') {
+                    image.src = `./Images/clouds.png`;
+                    myWeatherContainer.style.backgroundColor = '#86d3d3';
+                } else if (weatherMain == 'Rain') {
+                    image.src = `./Images/rain.png`;
+                    myWeatherContainer.style.backgroundColor = '#4a6ea8';
+                } else if (weatherMain == 'Drizzle') {
+                    image.src = `./Images/drizzle.png`;
+                    myWeatherContainer.style.backgroundColor = '#6c9bbf';
+                } else if (weatherMain == 'Haze') {
+                    image.src = `./Images/haze.png`;
+                    myWeatherContainer.style.backgroundColor = '#d8ced2';
+                }
+
+                const currentMonth = date.getMonth();
+                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept.", "Oct.", "Nov", "Dec"];
+                dates.innerHTML = `${date.getDate()}, ${monthNames[currentMonth]}`;
+
+                function updateClock() {
+                    const now = new Date();
+                    const hours = now.getHours();
+                    const minutes = now.getMinutes();
+                    const seconds = now.getSeconds();
+                    times.innerHTML = `${hours}:${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                }
+                setInterval(updateClock, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

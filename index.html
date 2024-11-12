@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- style css -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- boxicons -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- sal css -->
+        <link rel="stylesheet" href="assets/css/sal.css">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="assets/media/favicon.webp">
+        <!-- title -->
+        <title>Sami - Frontend Web Developer</title>
+        <!-- description -->
+        <meta name="description" content="Muhammad Sami, a Frontend Developer Expert in Crafting Responsive & Exceptional User Experiences.">
+        <!-- keywords -->
+        <meta name="keywords" content="frontend developer, HTML, CSS, JavaScript, web development, responsive design, UI/UX design, Bootstrap, Tailwind CSS, React, Vue.js, Angular, web developer, frontend engineer, CSS frameworks, JavaScript frameworks, DOM manipulation, web performance, cross-browser compatibility, web accessibility, user experience, web design, coding, programming, mobile-first design, grid systems, flexbox, Sass, LESS, frontend tools, Git, GitHub, website optimization, SEO, PWA, single-page applications, web animations, API integration">
+    </head>
+    <body class="bg-primary font-poppins">
+        <!-- spinner loader -->
+        <div class="spinner-main">
+            <div class="spinner h-[100px] w-[100px] relative"></div>
+        </div>
+        <!-- 
+      ////////////////////////
+      navigation menu
+      ////////////////////////
+     -->
+        <header class="text-primary flex justify-between py-[1.1rem] px-[5%] fixed top-0 left-0 w-full z-[1001] late-header">
+            <a href="#" class="nav-name md:text-[1.4rem] text-[1.2rem] font-bold mt-[5px] md:mt-[4px] z-50 relative">Muhammad Sami</a>
+            <input type="checkbox" id="menu-toggle" class="hidden">
+            <label for="menu-toggle" class="icon">
+                <!-- <i class='bx bx-menu md:hidden text-[2.2rem] mt-[3.2px] icon-bar'></i> -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-6 h-6 md:hidden icon-bar mt-[7.6px] mr-[8.5px] text-primary">
+                    <path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+                </svg>
+                <i class='bx bx-x md:hidden text-[2.6rem] mt-[0] icon-x'></i>
+            </label>
+            <div class="flex">
+                <nav class="md:inline-flex justify-between z-50">
+                    <a onclick="window.location.href='#home'" class="relative h-[2.7rem] cursor-pointer active w-[2.7rem] md:mr-[4px] rounded-full flex justify-center items-center transition-all ease-in-out duration-600 hover:bg-secondary group">
+                        <span class="absolute hidden md:block top-[calc(100%+1rem)] text-xs left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#079185] to-[#00a6dd] text-white py-1 px-2 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            HOME
+                   <span class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-[#079185] rotate-45"></span>
+                        </span>
+                        <i class='bx bx-home text-[1.5rem]'></i>
+                    </a>
+                    <a onclick="window.location.href='#about'" class="h-[2.7em] cursor-pointer relative group w-[2.7rem] md:mr-[4px] rounded-full flex justify-center items-center transition-all ease-in-out duration-600 hover:bg-secondary">
+                        <span class="absolute hidden md:block top-[calc(100%+1rem)] text-xs left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#079185] to-[#00a6dd] text-white py-1 px-2 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            ABOUT
+                    <span class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-[#079185] rotate-45"></span>
+                        </span>
+                        <i class='bx bx-user text-[1.5rem]'></i>
+                    </a>
+                    <a onclick="window.location.href='#skills'" class="h-[2.7rem] relative group cursor-pointer w-[2.7rem] md:mr-[4px] rounded-full flex justify-center items-center transition-all ease-in-out duration-600 hover:bg-secondary">
+                        <span class="absolute hidden md:block top-[calc(100%+1rem)] text-xs left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#079185] to-[#00a6dd] text-white py-1 px-2 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            SKILLS
+                    <span class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-[#079185] rotate-45"></span>
+                        </span>
+                        <i class='bx bx-book text-[1.5rem]'></i>
+                    </a>
+                    <a onclick="window.location.href='#services'" class="h-[2.7rem] relative group cursor-pointer w-[2.7rem] md:mr-[4px] rounded-full flex justify-center items-center transition-all ease-in-out duration-600 hover:bg-secondary">
+                        <span class="absolute hidden md:block top-[calc(100%+1rem)] text-xs left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#079185] to-[#00a6dd] text-white py-1 px-2 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            SERVICES
+                    <span class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-[#079185] rotate-45"></span>
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="currentColor">
+                            <path d="M360-160q-19 0-34-11t-22-28l-92-241H40v-80h228l92 244 184-485q7-17 22-28t34-11q19 0 34 11t22 28l92 241h172v80H692l-92-244-184 485q-7 17-22 28t-34 11Z"/>
+                        </svg>
+                    </a>
+                    <a onclick="window.location.href='#portfolio'" class="h-[2.7rem] relative group cursor-pointer w-[2.7rem] md:mr-[4px] rounded-full flex justify-center items-center transition-all ease-in-out duration-600 hover:bg-secondary">
+                        <span class="absolute hidden md:block top-[calc(100%+1rem)] text-xs left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#079185] to-[#00a6dd] text-white py-1 px-2 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            PORTFOLIO
+                    <span class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-[#079185] rotate-45"></span>
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="currentColor">
+                            <path d="m499-287 335-335-52-52-335 335 52 52Zm-261 87q-100-5-149-42T40-349q0-65 53.5-105.5T242-503q39-3 58.5-12.5T320-542q0-26-29.5-39T193-600l7-80q103 8 151.5 41.5T400-542q0 53-38.5 83T248-423q-64 5-96 23.5T120-349q0 35 28 50.5t94 18.5l-4 80Zm280 7L353-358l382-382q20-20 47.5-20t47.5 20l70 70q20 20 20 47.5T900-575L518-193Zm-159 33q-17 4-30-9t-9-30l33-159 165 165-159 33Z"/>
+                        </svg>
+                    </a>
+                    <a onclick="window.location.href='#contact'" class="h-[2.7rem] relative group w-[2.7rem] cursor-pointer md:mr-[4px] rounded-full flex justify-center items-center transition-all ease-in-out duration-600 hover:bg-secondary">
+                        <span class="absolute hidden md:block top-[calc(100%+1rem)] text-xs left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#079185] to-[#00a6dd] text-white py-1 px-2 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            CONTACT
+                    <span class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-[#079185] rotate-45"></span>
+                        </span>
+                        <i class='bx bx-message-square-detail text-[1.5rem]'></i>
+                    </a>
+                    <a onclick="window.location.href='#footer'" class="h-[2.7rem] relative group w-[2.7rem] cursor-pointer md:mr-[30px] rounded-full flex justify-center items-center transition-all ease-in-out duration-600 hover:bg-secondary">
+                        <span class="absolute hidden md:block top-[calc(100%+1rem)] text-xs left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#079185] to-[#00a6dd] text-white py-1 px-2 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                            FOOTER
+                    <span class="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2.5 h-2.5 bg-[#079185] rotate-45"></span>
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="currentColor">
+                            <path d="M315-240q-77 0-117-57t-38-128l-18-27q-11-17-36.5-77T80-680q0-103 51-171.5T260-920q85 0 132.5 75.5T440-680q0 58-16 107t-28 79l8 13q8 14 22 44.5t14 63.5q0 57-35.5 95T315-240ZM210-496l110-22q13-32 26.5-73t13.5-89q0-60-27.5-110T260-840q-45 0-72.5 50T160-680q0 63 17.5 111.5T210-496Zm105 176q19 0 32-14t13-39q0-17-8-35t-16-32l-96 20q0 40 17.5 70t57.5 30ZM645-40q-54 0-89.5-38T520-173q0-33 14-63.5t22-44.5l8-13q-12-30-28-79t-16-107q0-89 47.5-164.5T700-720q78 0 129 68.5T880-480q0 91-25.5 150.5T818-253l-18 28q1 71-38.5 128T645-40Zm105-256q15-24 32.5-72T800-480q0-60-27.5-110T700-640q-45 0-72.5 50T600-480q0 48 13.5 88.5T640-318l110 22ZM645-120q40 0 57.5-30t17.5-70l-96-20q-8 14-16 32t-8 35q0 20 12.5 36.5T645-120Z"/>
+                        </svg>
+                    </a>
+                </nav>
+                <label class="switch relative inline-block w-12 h-6 cursor-pointer mt-[9px] right-[130%] md:right-[0]">
+                    <span class="sun absolute top-[3.5px] left-[25.5px] z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-[1.12rem] h-[1.12rem] fill-current text-yellow-400">
+                            <g>
+                                <circle r="5" cy="12" cx="12"></circle>
+                                <path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="moon absolute top-[3px] left-[5px] z-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-[1.12rem] h-[1.12rem] fill-current text-gray-200">
+                            <path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+                        </svg>
+                    </span>
+                    <input id="shift" type="checkbox" class="input opacity-0 w-0 h-0">
+                    <span class="slider absolute top-0 left-0 right-0 bottom-0 bg-[#0D9488] transition duration-400 rounded-full"></span>
+                </label>
+            </div>
+        </header>
+        <main class=" px-[5%]">
+            <!-- Floating Menu Button -->
+            <div class="fixed bottom-8 left-8 z-[99999]">
+                <!-- Main Menu Button -->
+                <button id="menuBtn" class="w-16 h-16 menuBtn rounded-full blur-bg backdrop-blur-[10px] text-primary flex items-center justify-center 
+             scale-[0.9] transition-transform scale-hover scale-click focus:outline-none relative">
+                    <i id="menuBtn" id="menuIcon" class='bx bx-menu text-3xl pointer-events-none menuBtn'></i>
+                </button>
+                <!-- Menu Items -->
+                <div id="menuItems" class="absolute bottom-full -mb-4 left-0 space-y-4 scale-[0.8]">
+                    <a class='menu-item w-16 h-16 bg-[#0D9488] text-white rounded-full flex items-center justify-center' href='/'>
+                        <i class='bx bx-home text-[1.7rem]'></i>
+                    </a>
+                    <a class='menu-item hover:scale-[1.1] w-16 h-16 bg-secondary text-secondary rounded-full flex items-center justify-center' href='/assets/pages/about'>
+                        <i class='bx bx-user text-[1.7rem]'></i>
+                    </a>
+                    <a class='menu-item hover:scale-[1.1] w-16 h-16 bg-secondary text-secondary rounded-full flex items-center justify-center' href='/assets/pages/portfolio'>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="currentColor">
+                            <path d="m499-287 335-335-52-52-335 335 52 52Zm-261 87q-100-5-149-42T40-349q0-65 53.5-105.5T242-503q39-3 58.5-12.5T320-542q0-26-29.5-39T193-600l7-80q103 8 151.5 41.5T400-542q0 53-38.5 83T248-423q-64 5-96 23.5T120-349q0 35 28 50.5t94 18.5l-4 80Zm280 7L353-358l382-382q20-20 47.5-20t47.5 20l70 70q20 20 20 47.5T900-575L518-193Zm-159 33q-17 4-30-9t-9-30l33-159 165 165-159 33Z"/>
+                        </svg>
+                    </a>
+                    <a class='menu-item w-16 hover:scale-[1.1] h-16 bg-secondary text-secondary rounded-full flex items-center justify-center' href='/assets/pages/contact'>
+                        <i class='bx bx-message-square-detail text-[1.7rem]'></i>
+                    </a>
+                    <a href="assets/pages/persoanl.html" class="menu-item hover:scale-[1.1] w-16 h-16 bg-secondary text-secondary rounded-full flex items-center justify-center">
+                        <i class='bx bxl-deezer text-[1.7rem]'></i>
+                    </a>
+                </div>
+            </div>
+            <!-- bottom notificatoin -->
+            <div class="notification bg-secondary text-primary w-[70%] sm:w-[50%] px-5 py-1 flex justify-between items-center fixed bottom-36 sm:bottom-2 sm:left-0 right-4 sm:right-0 sm:m-auto z-[99999] rounded-lg">
+                <p class="text-[3vw] sm:text-[1.2vw]">The website is under maintenance. Thank you for your patience.</p>
+                <button class="text-[7vw] sm:text-[3vw] hover:cursor-pointer" id="closeNoti">&times;</button>
+            </div>
+            <!-- 
+       ////////////////////////
+       home section 
+       ////////////////////////
+      -->
+            <section id="home" class="h-[100vh] sm:h-[100vh] relative">
+                <div class="hero absolute top-[35%] sm:top-[26%] text-center w-full ">
+                    <span class="home-title text-[7vw] md:text-[4.5vw] font-bold td-hamid">Muhammad Sami</span>
+                    <span class="text-primary text-[7vw] md:text-[5vw] font-bold">.</span>
+                    <h1 class="text-primary text-[6vw] md:text-[5.5vw] font-bold td-fwd">FRONTEND WEB DEVELOPER</h1>
+                    <i onclick="window.location.href='#about'" class='bx bx-chevron-down scroll-down text-secondary text-[8vw] sm:text-[4.4vw] md:text-[5vw] absolute left-[48%] cursor-pointer'></i>
+                </div>
+            </section>
+            <!-- 
+       ////////////////////////
+       about section
+       ////////////////////////
+     -->
+            <section id="about" class="pb-10 px-[4.7%] md:px-[8.5%] text-primary scroll-mt-[13vh] sm:scroll-mt-[16vh]">
+                <div class="about text-center w-full">
+                    <span class="text-secondary text-[0.73rem] sm:text-base">Get to Know</span>
+                    <h1 class="about-title title-bottom text-3xl sm:text-4xl relative font-medium text-primary">About Me</h1>
+                    <div class="about-container mt-10 sm:mt-20 flex flex-col lg:flex-row lg:justify-between items-center lg:items-start">
+                        <div data-sal="slide-right" data-sal-duration="1000" data-sal-easing="ease-out-back" class="gradient-img group h-[10rem] sm:h-[15rem] md:h-[18rem] xl:h-[22rem] w-[10rem] sm:w-[15rem] md:w-[18rem] xl:w-[22rem] overflow-hidden rounded-lg bg-gradient-to-tl from-[#0D9488] to-[#00a6dd] cursor-zoom-in">
+                            <img src="./assets/media/Portfolio.jpg" loading="lazy" class="transition-transform duration-[0.55s] ease-in-out group-hover:scale-[1.3] rounded-[22px] sm:rounded-[0px] object-cover" alt="Muhammad Sami web developer">
+                        </div>
+                        <div class="text-container w-[100%] lg:w-[50%] text-justify">
+                            <p data-sal="slide-left" data-sal-duration="1000" data-sal-easing="ease-out-back" class="text-secondary text-[0.75rem] sm:text-[1.9vw] lg:text-[1.25vw] mt-7 lg:mt-0">
+                                Hey there! I'm Muhammad Sami, your go-to frontend web wizard. I am a passionate web developer and a dedicated Software Engineering student from <strong>Bahawalpur, Pakistan</strong>
+                                . I contribute to open-source platforms and am currently learning <strong>React.js</strong>
+                                . My keen eye for design and relentless pursuit of perfection means your project is in expert hands.<br>
+                                <br>
+                                But wait, there's more! I'm super <strong>budget-friendly</strong>
+                                and always here to <strong>support</strong>
+                                you with your project in the future. Let's team up and turn your vision into a beautiful digital reality!
+                            </p>
+                            <div data-sal="slide-up" data-sal-duration="1000" data-sal-easing="ease-out-back" class="buttons mt-7 sm:mt-9 flex gap-1 justify-center lg:justify-start text-[2.55vw] sm:text-[1.9vw] lg:text-[1.25vw]">
+                                <a href="#contact" class="say-hello py-[10px] px-[20px] rounded-md border-2 border-[#0D9488] overflow-hidden relative hover:text-white">SAY HELLO</a>
+                                <a href="" target="_blank" class="resume py-[10px] px-[20px] text-white bg-[#0D9488] border-[#0D9488] overflow-hidden relative rounded-md border-2 ">INSPECT RESUME</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 
+       ////////////////////////
+       skills section 
+       ////////////////////////
+     -->
+            <section id="skills" class="h-min scroll-mt-[0vh] py-10 sm:py-24 px-[4.7%] md:px-[8.5%]">
+                <div class="skills-title text-center">
+                    <span class="text-secondary text-[0.73rem] sm:text-base">I specialize in</span>
+                    <h1 class="about-title title-bottom text-3xl sm:text-4xl relative font-medium text-primary">My Skills</h1>
+                </div>
+                <div class="service-container w-full grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-16 cursor-default">
+                    <div data-sal="slide-right" data-sal-duration="800" data-sal-delay="200" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-orange-600">
+                            <i class='bx bxl-html5'></i>
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">HTML5</h2>
+                        <p class="text-xs mt-1 text-secondary">Experienced in HTML5, building robust and semantic web structures efficiently.</p>
+                    </div>
+                    <div data-sal="slide-right" data-sal-duration="800" data-sal-delay="300" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-blue-600">
+                            <i class='bx bxl-css3'></i>
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">CSS3</h2>
+                        <p class="text-xs mt-1 text-secondary">Experienced in CSS3, crafting responsive and visually appealing web designs.</p>
+                    </div>
+                    <div data-sal="slide-right" data-sal-duration="800" data-sal-delay="400" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-purple-600">
+                            <i class='bx bxl-bootstrap'></i>
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">BOOTSTRAP 5</h2>
+                        <p class="text-xs mt-1 text-secondary">Intermediate in Bootstrap 5, creating responsive layouts and components easily.</p>
+                    </div>
+                    <div data-sal="slide-left" data-sal-duration="800" data-sal-delay="400" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-sky-500">
+                            <i class='bx bxl-tailwind-css'></i>
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">TAILWIND CSS</h2>
+                        <p class="text-xs mt-1 text-secondary">Experienced in Tailwind CSS, designing custom, utility-first styled web interfaces seamlessly.</p>
+                    </div>
+                    <div data-sal="slide-left" data-sal-duration="800" data-sal-delay="300" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-yellow-500">
+                            <i class='bx bxl-javascript'></i>
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">JavaScript ES6</h2>
+                        <p class="text-xs mt-1 text-secondary">Intermediate in JavaScript ES6, developing dynamic and modern web applications effectively.</p>
+                    </div>
+                    <div data-sal="slide-left" data-sal-duration="800" data-sal-delay="200" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center overflow-hidden">
+                            <img src="assets/media/bulma.webp" class="h-[65%] w-[65%]" alt="CSS framework Bulma responsive design">
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">BULMA</h2>
+                        <p class="text-xs mt-1 text-secondary">Familiar with Bulma for responsive and modern web interfaces.</p>
+                    </div>
+                    <div data-sal="slide-right" data-sal-duration="800" data-sal-delay="200" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center overflow-hidden">
+                            <img src="./assets/media/1-removebg-preview.png" class="h-[55%] w-[55%]" alt="IDEs code editors Visual Studio Code VS Code">
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">VS CODE</h2>
+                        <p class="text-xs mt-1 text-secondary">Experienced in VSCode for efficient and streamlined code editing and development.</p>
+                    </div>
+                    <div data-sal="slide-right" data-sal-duration="800" data-sal-delay="300" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-primary">
+                            <i class='bx bxl-github'></i>
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">Git and Github</h2>
+                        <p class="text-xs mt-1 text-secondary">Intermediate in Git and GitHub for code management and collaboration.</p>
+                    </div>
+                    <div data-sal="slide-right" data-sal-duration="800" data-sal-delay="400" class="sub-service tilt-effect bg-secondary h-44 md:h-52 lg:h-44 rounded-lg p-6">
+                        <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-cyan-500">
+                            <i class='bx bxl-react'></i>
+                        </div>
+                        <h2 class="mt-3 font-medium text-primary">REACT</h2>
+                        <p class="text-xs mt-1 text-secondary">ReactJS enables efficient, scalable, and reusable components with declarative, performance-driven development.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- 
+      ////////////////////////
+      services section 
+      ////////////////////////
+     -->
+            <section id="services" class="scroll-mt-[6vh] px-[4.7%] md:px-[8.5%] py-16">
+                <div class="serices-title text-center">
+                    <span class="text-secondary text-[0.73rem] sm:text-base">what I provide</span>
+                    <h1 class="title-bottom text-3xl sm:text-4xl relative font-medium text-primary">Services</h1>
+                </div>
+                <div data-sal="slide-up" data-sal-duration="800" class="sercice-container w-full grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-20 ">
+                    <div class="sub-service-container h-min rounded-b-3xl overflow-hidden border-2 border-[#01d3d7d6]">
+                        <div class="inner-sub w-full h-[18vh] sm:h-[25vh] rounded-b-[2rem] bg-[#01d3d7d6] flex justify-center items-center">Coustom Web Designs</div>
+                        <div class="text p-5 pt-6 text-primary w-full text-[3vw] sm:text-[1.9vw] md:text-[1.5vw] lg:text-[1.1vw]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10 15.586L6.707 12.293 5.293 13.707 10 18.414l9.707-9.707-1.414-1.414z" fill="#01d3d7d6"/>
+                            </svg>
+                            <p class="mt-2">Craft unique and visually striking websites that are customized to perfectly represent your brand's identity and values.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-5" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10 15.586L6.707 12.293 5.293 13.707 10 18.414l9.707-9.707-1.414-1.414z" fill="#01d3d7d6"/>
+                            </svg>
+                            <p class="mt-2">Elevate user experience with custom animations and captivating visual effects that engage visitors and make a lasting impression.</p>
+                        </div>
+                    </div>
+                    <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="200" class="sub-service-container h-min rounded-b-3xl overflow-hidden border-2 border-[#01d3d7d6]">
+                        <div class="inner-sub w-full h-[18vh] sm:h-[25vh] rounded-b-[2rem] bg-[#01d3d7d6] flex justify-center items-center">Website Optimization</div>
+                        <div class="text p-5 text-primary w-full text-[3vw] sm:text-[1.9vw] md:text-[1.5vw] lg:text-[1.1vw]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10 15.586L6.707 12.293 5.293 13.707 10 18.414l9.707-9.707-1.414-1.414z" fill="#01d3d7d6"/>
+                            </svg>
+                            <p class="mt-2">Boost your site's visibility with effective SEO, including improved content and meta tags that help your site rank higher in search results.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-5" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10 15.586L6.707 12.293 5.293 13.707 10 18.414l9.707-9.707-1.414-1.414z" fill="#01d3d7d6"/>
+                            </svg>
+                            <p class="mt-2">Achieve faster load times and improved user experience by optimizing website speed and efficiency.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-5" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10 15.586L6.707 12.293 5.293 13.707 10 18.414l9.707-9.707-1.414-1.414z" fill="#01d3d7d6"/>
+                            </svg>
+                            <p class="mt-2">Enhance website accessibility to ensure a wider audience can easily navigate and interact with your site.</p>
+                        </div>
+                    </div>
+                    <div data-sal="slide-up" data-sal-duration="800" data-sal-delay="500" class="sub-service-container h-min rounded-b-3xl overflow-hidden border-2 border-[#01d3d7d6] sm:mt-[-20vh] lg:mt-0">
+                        <div class="inner-sub w-full h-[18vh] sm:h-[25vh] rounded-b-[2rem] bg-[#01d3d7d6] flex justify-center items-center">Responsive Design</div>
+                        <div class="text p-5 text-primary w-full text-[3vw] sm:text-[1.9vw] md:text-[1.5vw] lg:text-[1.1vw]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10 15.586L6.707 12.293 5.293 13.707 10 18.414l9.707-9.707-1.414-1.414z" fill="#01d3d7d6"/>
+                            </svg>
+                            <p class="mt-2">Ensure your website is visually appealing and fully functional on all devices and screen sizes, from desktops to smartphones.</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mt-6" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M10 15.586L6.707 12.293 5.293 13.707 10 18.414l9.707-9.707-1.414-1.414z" fill="#01d3d7d6"/>
+                            </svg>
+                            <p class="mt-2">Apply responsive design techniques to deliver an optimal viewing experience, making your site easy to navigate and use across various platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- cursor effectr and toggle button -->
+            <div class="fixed bottom-0 left-0 w-full h-full pointer-events-none hidden lg:block z-[-2]" id="cursor-tails"></div>
+            <div class="cursor-effect-toggle blur-bg backdrop-blur-[50px] fixed bottom-8 right-10 z-[2050] text-secondary text-xs p-2 rounded-3xl cursor-pointer hidden lg:block">
+                <span id="cursor-text">
+                    Cursor Effect is <span id="cursor-state">ON</span>
+                </span>
+            </div>
+            <!-- 
+      ////////////////////////
+      portfolio section 
+      ////////////////////////
+     -->
+            <section id="portfolio" class="h-min scroll-mt-[4.8vh] py-16 px-[4.7%] md:px-[8.5%]">
+                <div class="folio-title text-center">
+                    <span class="text-secondary text-[0.73rem] sm:text-base">special about</span>
+                    <h1 class="title-bottom text-3xl sm:text-4xl relative font-medium text-primary">Portfolio</h1>
+                </div>
+                <div class="pinned flex flex-col lg:flex-row mt-24 gap-6">
+                    <div data-sal="slide-right" data-sal-duration="500" class="cara-img">
+                        <img src="assets/media/care.PNG" alt="Ecommerce website design" loading="lazy" class="cara rounded cursor-pointer tilt-effect">
+                    </div>
+                    <div data-sal="slide-left" data-sal-duration="500" class="des">
+                        <h1 class="text-primary text-xl font-medium">Multi-Page E-Commerce Website</h1>
+                        <p class="text-secondary text-xs sm:text-sm mt-2 sm:mt-1">
+                            <strong>Sami-Dev Studio</strong> is a dynamic portfolio showcasing web development, digital marketing, and cloud hosting expertise. With a focus on user-centered design and efficient solutions, this site highlights a variety of web projects developed using HTML, CSS, JavaScript, and React.js, demonstrating both creativity and technical skill. Client testimonials and contact options add a personal touch, making it a strong platform for connecting with potential clients.
+                        </p>
+                        <div class="links w-full text-secondary py-4 flex gap-2 text-xs sm:text-[1.7vw] md:text-[1.2vw] lg:text-[1vw]">
+                            <a href="https://samitech01.github.io/Sami-dev-studio/" class="sub-links bg-tertiary py-2 px-4 rounded-lg">
+                                <i class='bx bx-play-circle live-source mr-1'></i>
+                                Live Link
+                            </a>
+                            <a href="#" class="sub-links bg-tertiary py-2 px-4 rounded-lg">
+                                <i class='bx bx-git-branch live-source mr-1'></i>
+                                Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="folio-grid w-full h-min grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-16">
+                    <div data-sal="slide-right" data-sal-duration="500" data-sal-delay="200" class="folio-card h-min bg-secondary rounded-lg">
+                        <div class="folio-img w-full  overflow-hidden rounded-md">
+                            <img src="assets/media/weather.webp" class="h-full w-full" alt="Tailwind CSS landing pages">
+                        </div>
+                        <div class="w-full h-min p-3">
+                            <h1 class="text-primary my-4"><a href="./weather.html">Weatherly</a></h1>
+                        </div>
+                    </div>
+                    <div data-sal="slide-up" data-sal-duration="500" class="folio-card h-min bg-secondary rounded-lg">
+                        <div class="folio-img w-full overflow-hidden rounded-md">
+                            <img src="assets/media/download.png" loading="lazy" class=" h-full w-full " alt="Bootstrap landing pages">
+                        </div>
+                        <div class="w-full h-min p-3">
+                            <h1 class="text-primary my-4"><a href="guess-the-number - Copy.html">Let's play Guess the Number!</a></h1>
+                        </div>
+                    </div>
+                    <div data-sal="slide-left" data-sal-duration="500" data-sal-delay="200" class="folio-card h-min bg-secondary rounded-lg">
+                        <div class="folio-img w-full overflow-hidden rounded-md">
+                            <img src="assets/media/counter.webp" loading="lazy" class="object-cover  h-full w-full" alt="portfolio design personal portfolio">
+                        </div>
+                        <div class="w-full h-min p-3">
+                            <h1 class="text-primary my-4"><a href="./Counter.html">ClickCount</a></h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- show more / show less -->
+                <div class="folio-more w-full flex justify-center mt-16">
+                    <button id="moreToggle" class="group group-hover:before:duration-500 group-hover:after:duration-500 after:duration-500 hover:before:[box-shadow:_20px_20px_20px_30px_#079185] duration-500 before:duration-500 hover:duration-500 underline underline-offset-2 hover:after:-right-8 hover:before:right-12 hover:before:-bottom-8 hover:before:blur hover:underline hover:underline-offset-4 origin-left hover:decoration-2 hover:text-[#00a6dd] relative see-more-bg h-16 w-64 see-more-border text-left p-3 text-primary text-base font-bold rounded-lg overflow-hidden before:absolute before:w-12 before:h-12 before:content[''] before:right-1 before:top-1 before:z-10 before:bg-[#079185] before:rounded-full before:blur-lg after:absolute after:z-10 after:w-20 after:h-20 after:content[''] after:bg-[#00a6dd] after:right-8 after:top-3 after:rounded-full after:blur-lg">See more
+                </button>
+                </div>
+            </section>
+            <!-- 
+      ////////////////////////
+      contact section 
+      ////////////////////////
+     -->
+            <section id="contact" class="h-min scroll-mt-[4vh] py-20 px-[4.7%] md:px-[8.5%]">
+                <div class="contact-title text-center">
+                    <span class="text-secondary text-[0.73rem] sm:text-base">Get in touch</span>
+                    <h1 class="title-bottom text-3xl sm:text-4xl relative font-medium text-primary">Contact Me</h1>
+                </div>
+                <div class="contact-container flex flex-col sm:flex-row gap-4 w-full mt-20 h-min">
+                    <div class="accounts w-full sm:w-1/3 flex flex-col gap-4 h-min">
+                        <a data-sal="slide-right" data-sal-duration="500" href="https://github.com/samitech01" target="_blank" class="contact w-full tilt-effect bg-secondary rounded-lg h-min rounded-lg p-6 flex flex-col justify-center items-center">
+                            <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-primary">
+                                <i class='bx bxl-github'></i>
+                            </div>
+                            <h2 class="mt-3 font-medium text-primary md:text-md lg:text-lg">Github</h2>
+                            <p class="text-secondary text-xs md:text-sm">samitech01</p>
+                            <p class="text-xs lg:text-sm mt-1 text-teal-500">
+                                Explore My Code on GitHub <i class='bx bx-link-external'></i>
+                            </p>
+                        </a>
+                        <a data-sal="slide-right" data-sal-duration="500" href="https://www.linkedin.com/in/muhammad-sami-a31386337/" target="_blank" class="contact w-full tilt-effect bg-secondary rounded-lg h-min rounded-lg p-6 flex flex-col justify-center items-center">
+                            <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-[#0077B5]">
+                                <i class='bx bxl-linkedin-square'></i>
+                            </div>
+                            <h2 class="mt-3 font-medium text-primary md:text-md lg:text-lg">LinkedIn</h2>
+                            <p class="text-secondary text-xs md:text-sm">Muhammad Sami</p>
+                            <p class="text-xs lg:text-sm mt-1 text-teal-500">
+                                Connect Professionally <i class='bx bx-link-external'></i>
+                            </p>
+                        </a>
+                        <a data-sal="slide-right" data-sal-duration="500" href="mailto:muhammadsami2816@gmail.com?subject=Inquiry%20About%20Your%20Services&body=Hello,%0A%0AI%20would%20like%20to%20know%20more%20about%20your%20services.%0A%0AThank%20you!" target="_blank" class="contact w-full tilt-effect bg-secondary rounded-lg h-min rounded-lg p-6 flex flex-col justify-center items-center">
+                            <div class="square h-10 w-10 bg-tertiary rounded-md flex items-center justify-center text-2xl text-[#ffa500]">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                            <h2 class="mt-3 font-medium text-primary md:text-md lg:text-lg">Email me</h2>
+                            <p class="text-secondary text-xs md:text-sm">muhammadsami2816@gmail.com</p>
+                            <p class="text-xs lg:text-sm mt-1 text-teal-500">
+                                Drop a Message <i class='bx bx-link-external'></i>
+                            </p>
+                        </a>
+                    </div>
+                    <div class="contact-form w-full sm:w-2/3 rounded-lg sm:px-10 h-min mt-10 sm:mt-0">
+                        <form action="https://api.web3forms.com/submit" method="post" id="quote" class="flex flex-col gap-5">
+                            <input type="hidden" name="access_key" value="a535e968-03cb-4b16-a8fd-50ed02759a4a">
+                            <input data-sal="slide-left" data-sal-duration="500" class="bg-transparent border-2 border-[#0d8b94] rounded-lg h-[8vh] text-secondary p-5" placeholder="Enter Full Name" name="name" required type="text">
+                            <input data-sal="slide-left" data-sal-duration="500" class="bg-transparent border-2 border-[#0d8b94] rounded-lg h-[8vh] text-secondary p-5" placeholder="Email Address" name="email" required type="email">
+                            <textarea data-sal="slide-left" data-sal-duration="500" class="bg-transparent resize-none border-2 border-[#0d8b94] rounded-lg h-[40vh] text-secondary p-5" placeholder="Your message here" spellcheck="false" name="message" required></textarea>
+                            <input type="hidden" name="redirect" value=""> <!-- Adjust URL as needed -->
+                            <button data-sal="slide-up" data-sal-duration="500" id="submitButton" class="submit-button py-[10px] px-[20px] rounded-lg color-submit" type="submit">Share Your Thoughts</button>
+                            <p class="text-tertiary text-xs ml-2" id="freeSubmit">Drop a message, hear back within a day.</p>
+                        </form>
+                        
+                    </div>
+            </section>
+        </main>
+        <!-- 
+      ////////////////////////
+      footer
+      ////////////////////////
+     -->
+        <footer>
+            <section id="footer" class="footer w-full bg-[#0D9488] relative min-h-[30vh] flex flex-col items-center justify-center text-white mt-20 sm:mt-10">
+                <div class="waves">
+                    <div class="wave absolute left-0 top-[-90px] w-full h-[100px] bottom-0 opacity-100 z-[1000]" id="wave1"></div>
+                    <div class="wave absolute left-0 top-[-90px] w-full h-[100px] bottom-[10px] opacity-50 z-[999]" id="wave2"></div>
+                    <div class="wave absolute left-0 top-[-90px] w-full h-[100px] bottom-[15px] opacity-20 z-[1000]" id="wave3"></div>
+                    <div class="wave absolute left-0 top-[-90px] w-full h-[100px] bottom-[20px] opacity-70 z-[999]" id="wave4"></div>
+                </div>
+                <div class="footer-container flex">
+                    <div class="social-media flex gap-5 text-[8vw] sm:text-[4.5vw] md:text-[3vw] items-center">
+                        <a href="https://www.upwork.com" target="_blank">
+                            <i class='bx bxl-upwork'></i>
+                        </a>
+                        <a onclick="window.location.href='#home'">
+                            <i class='bx bx-chevron-up cursor-pointer scroll-up text-[8.5vw] sm:text-[5vw] md:text-[3.5vw]'></i>
+                        </a>
+                        <a href="https://www.freelancer.com" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path fill="white" d="m14.096 3.076l1.634 2.292L24 3.076M5.503 20.924l4.474-4.374l-2.692-2.89m6.133-10.584L11.027 5.23l4.022.15M4.124 3.077l.857 1.76l4.734.294m-3.058 7.072l3.497-6.522L0 5.13m7.064 7.485l3.303 3.548l3.643-3.57l1.13-6.652l-4.439-.228Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <p class="mt-8 cursor-default text-[2.8vw] sm:text-[2vw] md:text-[1.2vw]">
+                    &copy;Muhammad Sami <span id="update">2024</span>
+                    | All rights reserved.
+                </p>
+            </section>
+        </footer>
+        <!-- javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+        <script src="assets/js/sal.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
